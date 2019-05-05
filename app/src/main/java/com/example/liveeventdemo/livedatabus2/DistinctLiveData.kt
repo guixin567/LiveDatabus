@@ -23,6 +23,10 @@ open class DistinctLiveData<T>:MutableLiveData<T>() {
         super.postValue(value)
     }
 
+    fun observeStick(owner: LifecycleOwner, observer: Observer<T>){
+        super.observe(owner,  ObserverWrapper(observer))
+    }
+
     override fun observe(owner: LifecycleOwner, observer: Observer<T>) {
         //防止类型转换异常
         val observerWrapper = ObserverWrapper(observer)

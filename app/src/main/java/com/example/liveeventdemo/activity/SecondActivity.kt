@@ -22,6 +22,10 @@ class SecondActivity : BaseActivity() {
             showToast(it)
         })
 
+        LiveDataBus2.instance.with<String>(version2_stick_compatible).observeStick(this, Observer {
+            showToast(it)
+        })
+
     }
 
     override fun initListener() {

@@ -47,5 +47,9 @@ class VersionSecondActivity : BaseActivity() {
             LiveDataBus2.instance.with<String>(version2_live_data_optimization).setValue("测试LiveData优化")
         }
 
+        bt_function_compatible_stick.setOnClickListener {
+            LiveDataBus2.instance.with<String>(version2_stick_compatible).setValue("测试粘性事件")
+            routeTo<SecondActivity>()
+        }
     }
 }
