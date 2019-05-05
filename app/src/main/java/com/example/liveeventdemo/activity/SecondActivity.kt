@@ -5,10 +5,8 @@ import android.arch.lifecycle.Observer
 import com.example.liveeventdemo.R
 import com.example.liveeventdemo.livedatabus1.LiveDataBus1
 import com.example.liveeventdemo.livedatabus1.VersionFirstActivity
-import com.example.liveeventdemo.util.other_page_back_message
-import com.example.liveeventdemo.util.other_page_message
-import com.example.liveeventdemo.util.routeTo
-import com.example.liveeventdemo.util.showToast
+import com.example.liveeventdemo.livedatabus2.LiveDataBus2
+import com.example.liveeventdemo.util.*
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : BaseActivity() {
@@ -17,6 +15,10 @@ class SecondActivity : BaseActivity() {
 
     override fun initObserve() {
         LiveDataBus1.instance.with<String>(other_page_message).observe(this, Observer {
+            showToast(it)
+        })
+
+        LiveDataBus2.instance.with<String>(version2_no_stick).observe(this, Observer {
             showToast(it)
         })
 
