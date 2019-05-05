@@ -23,6 +23,12 @@ class VersionSecondActivity : BaseActivity() {
         LiveDataBus2.instance.with<String>(version2_live_data_optimization).observe(this, Observer {
             showToast("$it")
         })
+        /**
+         * 默认消息的接收
+         */
+        LiveDataBus2.instance.withDefault(version2_default_message,this){
+            showToast("有些场景不需要传值，就可以使用默认的消息")
+        }
     }
 
     override fun initListener() {
@@ -32,24 +38,43 @@ class VersionSecondActivity : BaseActivity() {
             group_function.isShow(!isChecked)
         }
 
+        /**
+         * 默认不是粘性事件
+         */
         bt_function_stick.setOnClickListener {
             LiveDataBus2.instance.with<String>(version2_no_stick).setValue("去掉默认的粘性事件")
             routeTo<SecondActivity>()
         }
 
+        /**
+         * 类型转换异常
+         */
         bt_function_class_cast.setOnClickListener {
             LiveDataBus2.instance.with<TestBean>(version2_class_cast).setValue(TestBean("测试"))
         }
 
+        /**
+         * LiveData相同事件的优化
+         */
         bt_function_live_data.setOnClickListener {
             LiveDataBus2.instance.with<String>(version2_live_data_optimization).setValue("测试LiveData优化")
             LiveDataBus2.instance.with<String>(version2_live_data_optimization).setValue("测试LiveData优化")
             LiveDataBus2.instance.with<String>(version2_live_data_optimization).setValue("测试LiveData优化")
         }
 
+        /**
+         * 兼容粘性事件
+         */
         bt_function_compatible_stick.setOnClickListener {
             LiveDataBus2.instance.with<String>(version2_stick_compatible).setValue("测试粘性事件")
             routeTo<SecondActivity>()
+        }
+
+        /**
+         * 默认消息的发送
+         */
+        bt_function_default.setOnClickListener {
+            LiveDataBus2.instance.withDefault(version2_default_message)
         }
     }
 }

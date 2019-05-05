@@ -50,6 +50,17 @@
             app:layout_constraintTop_toBottomOf="@+id/bt_function_live_data"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bt_function_default"
+            android:layout_marginTop="16dp"/>
+
+    <Button
+            android:text="发送默认的消息"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_function_default"
+            app:layout_constraintTop_toBottomOf="@+id/bt_function_compatible_stick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/bt_exception_compatible_stick"
             android:layout_marginTop="16dp"/>
 
@@ -58,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/bt_exception_compatible_stick"
-            app:layout_constraintTop_toBottomOf="@+id/bt_function_compatible_stick"
+            app:layout_constraintTop_toBottomOf="@+id/bt_function_default"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/bt_exception_no_params"
