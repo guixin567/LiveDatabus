@@ -23,10 +23,30 @@ open class DistinctLiveData<T>:MutableLiveData<T>() {
         super.postValue(value)
     }
 
+    /**
+     * 强制刷新setValue
+     */
+    fun refreshSetValue(value: T){
+        super.setValue(value)
+    }
+
+    /**
+     * 强制刷新postValue
+     */
+    fun refreshPostValue(value: T){
+        super.postValue(value)
+    }
+
+    /**
+     * 粘性事件监听
+     */
     fun observeStick(owner: LifecycleOwner, observer: Observer<T>){
         super.observe(owner,  ObserverWrapper(observer))
     }
 
+    /**
+     * 默认改成非粘性事件
+     */
     override fun observe(owner: LifecycleOwner, observer: Observer<T>) {
         //防止类型转换异常
         val observerWrapper = ObserverWrapper(observer)

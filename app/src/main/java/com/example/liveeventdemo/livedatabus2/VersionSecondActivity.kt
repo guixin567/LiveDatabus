@@ -74,7 +74,7 @@ class VersionSecondActivity : BaseActivity() {
          * 默认消息的发送
          */
         bt_function_default.setOnClickListener {
-            LiveDataBus2.instance.withDefault(version2_default_message)
+            LiveDataBus2.instance.withGetDefault(version2_default_message)
         }
     }
 }

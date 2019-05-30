@@ -27,10 +27,16 @@ class LiveDataBus2 {
     }
 
     /**
-     * 通过发送一个空串，伪装成不发送消息
+     * 通过setValue通过发送一个空串，伪装成不发送消息,这里一般是通知类的消息，所以直接使用的强制刷新
      */
-    fun withDefault(messageKey: String){
-        withDefaultMessage(messageKey).setValue("")
+    fun withGetDefault(messageKey: String){
+        withDefaultMessage(messageKey).refreshSetValue("")
+    }
+    /**
+     * 通过setValue发送一个空串，伪装成不发送消息,这里一般是通知类的消息，所以直接使用的强制刷新
+     */
+    fun withPostDefault(messageKey: String){
+        withDefaultMessage(messageKey).refreshPostValue("")
     }
 
     /**
