@@ -32,7 +32,7 @@
             android:layout_marginTop="16dp"/>
 
     <Button
-            android:text="1,类型转换异常"
+            android:text="类型转换异常"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/bt_exception_class_cast"
@@ -43,7 +43,7 @@
             android:layout_marginTop="16dp"/>
 
     <Button
-            android:text="2,LiveData优化"
+            android:text="LiveData优化"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/bt_exception_live_data"
@@ -54,11 +54,32 @@
             android:layout_marginTop="16dp"/>
 
     <Button
-            android:text="3,去掉默认的粘性事件"
+            android:text="去掉默认的粘性事件"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/bt_exception_stick"
             app:layout_constraintTop_toBottomOf="@+id/bt_exception_live_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" app:layout_constraintBottom_toTopOf="@+id/bt_exception_no_stick"
+    />
+    <Button
+            android:text="同时兼容粘性事件"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_exception_no_stick"
+            app:layout_constraintTop_toBottomOf="@+id/bt_exception_stick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" app:layout_constraintBottom_toTopOf="@+id/bt_exception_default"
+    />
+
+    <Button
+            android:text="发送默认的消息"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_exception_default"
+            app:layout_constraintTop_toBottomOf="@+id/bt_exception_no_stick"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp" app:layout_constraintBottom_toBottomOf="parent"
@@ -71,7 +92,7 @@
             android:layout_height="wrap_content"/>
 
     <android.support.constraint.Group
-            app:constraint_referenced_ids="bt_exception_class_cast,bt_exception_live_data,bt_exception_stick"
+            app:constraint_referenced_ids="bt_exception_class_cast,bt_exception_live_data,bt_exception_stick,bt_exception_no_stick,bt_exception_default"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

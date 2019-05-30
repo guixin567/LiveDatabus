@@ -65,7 +65,7 @@
             android:layout_marginTop="16dp"/>
 
     <Button
-            android:text="1,没有粘性事件"
+            android:text="支持实现跨进程"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/bt_exception_compatible_stick"
@@ -76,7 +76,7 @@
             android:layout_marginTop="16dp"/>
 
     <Button
-            android:text="2,默认不传参数"
+            android:text="解决事件的key定义没有约束"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/bt_exception_no_params"
@@ -87,7 +87,7 @@
             android:layout_marginTop="16dp"/>
 
     <Button
-            android:text="3,去掉反射"
+            android:text="去掉反射"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/bt_exception_no_reflection"
@@ -97,14 +97,26 @@
             android:layout_marginTop="16dp" app:layout_constraintBottom_toBottomOf="parent"
     />
 
+    <Button
+            android:text="支持延迟发送消息"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_exception_delay"
+            app:layout_constraintTop_toBottomOf="@+id/bt_exception_no_reflection"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+    />
+
     <android.support.constraint.Group
             android:id="@+id/group_function"
-            app:constraint_referenced_ids="bt_function_stick,bt_function_class_cast,bt_function_live_data"
+            android:visibility="visible"
+            app:constraint_referenced_ids="bt_function_stick,bt_function_class_cast,bt_function_live_data,bt_function_default,bt_function_compatible_stick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     <android.support.constraint.Group
-            app:constraint_referenced_ids="bt_exception_compatible_stick,bt_exception_no_params,bt_exception_no_reflection"
+            app:constraint_referenced_ids="bt_exception_compatible_stick,bt_exception_no_params,bt_exception_no_reflection,bt_exception_delay"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
